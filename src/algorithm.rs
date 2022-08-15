@@ -48,7 +48,7 @@ enum PrintFrame {
 pub const SIZE_INFINITY: isize = 0xffff;
 
 pub struct Printer {
-    out: String,
+    pub out: String,
     // Number of spaces left on line
     space: isize,
     // Ring-buffer of tokens and calculated sizes
