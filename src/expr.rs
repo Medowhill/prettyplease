@@ -513,7 +513,7 @@ impl Printer {
                 println!("{} {}", seg.ident.to_string(), self.out.split('\n').count());
             }
         }
-        self.outer_attrs(&expr.attrs);
+        // self.outer_attrs(&expr.attrs);
         self.qpath(&expr.qself, &expr.path);
     }
 
