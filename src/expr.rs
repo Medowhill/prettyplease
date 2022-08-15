@@ -508,13 +508,13 @@ impl Printer {
     }
 
     fn expr_path(&mut self, expr: &ExprPath) {
+        // self.outer_attrs(&expr.attrs);
+        self.qpath(&expr.qself, &expr.path);
         if let Some(attr) = expr.attrs.get(0) {
             if let Some(seg) = attr.path.segments.iter().delimited().next() {
                 println!("{} {}", seg.ident.to_string(), self.out.split('\n').count());
             }
         }
-        // self.outer_attrs(&expr.attrs);
-        self.qpath(&expr.qself, &expr.path);
     }
 
     fn expr_range(&mut self, expr: &ExprRange) {
